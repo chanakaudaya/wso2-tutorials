@@ -37,7 +37,7 @@
         <target type="property" property="response3"/>
     </enrich>
     <payloadFactory media-type="json">
-        <format>{results: [result1:$1, result2:$2, result3:$3]}</format>
+        <format>{"results": ["result1":$1, "result2":"$2", "result3":$3]}</format>
         <args>
             <arg xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:ns3="http://org.apache.synapse/xsd" evaluator="xml" expression="$ctx:response1"/>
             <arg xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:ns3="http://org.apache.synapse/xsd" evaluator="xml" expression="$ctx:response2"/>
