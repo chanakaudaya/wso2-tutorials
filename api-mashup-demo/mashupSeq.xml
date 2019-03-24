@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><sequence xmlns="http://ws.apache.org/ns/synapse" name="mashupSeq">
+    <log level="full">
+        <property name="STATUS" value="RESP-1"/>
+    </log>
+    <enrich>
+        <source type="body" clone="true"/>
+        <target type="property" property="response1"/>
+    </enrich>
+    <payloadFactory media-type="json">
+        <format>{"memo": {"name":"chanaka", "date":"2019/03/22", "note":"notified for bankruptcy"}}</format>
+    </payloadFactory>
+    <call>
+        <endpoint>
+            <http method="POST" uri-template="http://localhost:9101/addMemo"/>
+        </endpoint>
+    </call>
+    <log level="full">
+        <property name="STATUS" value="RESP-2"/>
+    </log>
+    <enrich>
+        <source type="body" clone="true"/>
+        <target type="property" property="response2"/>
+    </enrich>
+    <payloadFactory media-type="json">
+        <format>{"client-details": {"name":"chanaka", "business":"technology", "client-since":"1995"}}</format>
+    </payloadFactory>
+    <call>
+        <endpoint>
+            <http method="POST" uri-template="http://localhost:9102/createCall"/>
+        </endpoint>
+    </call>
+    <log level="full">
+        <property name="STATUS" value="RESP-3"/>
+    </log>
+    <enrich>
+        <source type="body" clone="true"/>
+        <target type="property" property="response3"/>
+    </enrich>
+    <payloadFactory media-type="json">
+        <format>{results: [result1:$1, result2:$2, result3:$3]}</format>
+        <args>
+            <arg xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:ns3="http://org.apache.synapse/xsd" evaluator="xml" expression="$ctx:response1"/>
+            <arg xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:ns3="http://org.apache.synapse/xsd" evaluator="xml" expression="$ctx:response2"/>
+            <arg xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:ns3="http://org.apache.synapse/xsd" evaluator="xml" expression="$ctx:response3"/>
+        </args>
+    </payloadFactory>
+    <respond/>
+</sequence>
