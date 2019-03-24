@@ -18,4 +18,4 @@ https://ballerina.io/downloads/
 * curl -v -k -X POST "https://172.19.0.1:8243/mashupdemo/v1/" -H "accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer b396f643-6b11-3ac3-ac94-fc7468689c71" -d "{ \"payload\": \"string\"}"
 
 ### Sample response
-* {"results": ["result1":{"id":101,"status":"done","info":{"name":"John Doe","city":"Colombo 03","country":"Sri Lanka"}}, "result2":Memo Added!, "result3":{"id":200,"status":"created"}]}
+* {"results": ["result1":{"id":101,"status":"done","info":{"name":"John Doe","city":"Colombo 03","country":"Sri Lanka"}}, "result2":"Memo Added!", "result3":{"id":200,"status":"created"}]}
