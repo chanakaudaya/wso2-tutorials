@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="basic_auth_policy" groupId="com.example.DemoBasicAuthRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>basic_auth_policy.xml</file>
+            <path>/_system/governance/policies</path>
+            <mediaType>application/wspolicy+xml</mediaType>
+        </item>
+    </artifact>
+</artifacts>

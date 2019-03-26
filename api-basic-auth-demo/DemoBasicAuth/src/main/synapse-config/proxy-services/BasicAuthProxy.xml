@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="BasicAuthProxy" startOnLoad="true" transports="https http" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <endpoint name="endpoint_urn_uuid_dea21d89-dd06-40e9-a679-b6f2d5978b95">
+            <address uri="http://localhost:9100/recordBankruptcyInfo"/>
+        </endpoint>
+        <inSequence/>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </target>
+    <policy key="gov:policies/basic_auth_policy.xml"/>
+    <enableSec/>
+</proxy>
