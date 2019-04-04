@@ -1,5 +1,7 @@
 ## Creating an API with WSO2 API Manager by connecting to a basic auth protected backend. 
 
+### Use case diagram
+![Connecting to BasicAuth protected back end with WSO2 APIM](BasicAuthwWSO2.png?raw=true)
 ### Prerequisites
 - WSO2 API Manager 2.6.0 - (https://wso2.com/api-management/)
 - WSO2 Enterprise Integrator 6.4.0 - (https://wso2.com/integration/)
