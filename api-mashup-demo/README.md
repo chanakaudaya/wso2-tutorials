@@ -1,5 +1,8 @@
 ## Sample files to create an API mashup with WSO2 API Manager
 
+### Use case diagram
+![API Mashup with WSO2 API Manager](/WSO2%20APIM%20Service%20Mashup.png?raw=true "API Mashup")
+
 ### Prerequisites
 * Install Ballerina by visiting the official Ballerina website
 https://ballerina.io/downloads/
